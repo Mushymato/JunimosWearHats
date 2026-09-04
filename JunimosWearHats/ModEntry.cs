@@ -243,6 +243,8 @@ public sealed class ModEntry : Mod
 
     private void OnDayStarted(object? sender, DayStartedEventArgs e)
     {
+        if (!Context.IsMainPlayer)
+            return;
         Utility.ForEachBuilding<JunimoHut>(hut =>
         {
             if (Game1.IsWinter && config.Enable_WorkInRainAndWinter)
