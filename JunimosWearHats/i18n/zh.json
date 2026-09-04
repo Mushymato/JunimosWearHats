@@ -1,0 +1,9 @@
+{
+  "$schema": "https://smapi.io/schemas/i18n.json",
+  "config.Enable_WorkInRainAndWinter.name": "启用: 祝尼魔在雨天和冬天干活",
+  "config.Enable_WorkInRainAndWinter.desc": "祝尼魔有帽子时他们在雨天和冬天也会干活",
+  "config.Enable_HarvestAllAtEndOfDay.name": "启用: 每晚自动收割",
+  "config.Enable_HarvestAllAtEndOfDay.desc": "祝尼魔每晚加班收获所有祝尼魔屋范围内的作物",
+  "config.Enable_RaisinsIncreaseRadius.name": "启用: 葡萄干增加范围",
+  "config.Enable_RaisinsIncreaseRadius.desc": "当祝尼魔们有葡萄干时，收获范围半径从8增加到10"
+}

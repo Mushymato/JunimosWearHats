@@ -16,7 +16,18 @@ namespace JunimosWearHats;
 
 public sealed class ModConfig
 {
-    public bool Enable_WorkInRainAndWinter { get; set; } = true;
+    public bool Enable_WorkInRainAndWinter
+    {
+        get => field;
+        set
+        {
+            if (field != value)
+            {
+                field = value;
+                ModEntry.ToggleWorkPatches();
+            }
+        }
+    } = true;
     public bool Enable_HarvestAllAtEndOfDay { get; set; } = true;
     public bool Enable_RaisinsIncreaseRadius { get; set; } = true;
 
@@ -125,6 +136,8 @@ public sealed class ModEntry : Mod
         Utility.ForEachBuilding<JunimoHut>(
             (hut) =>
             {
+                if (hut.noHarvest.Value)
+                    return true;
                 GameLocation parentLocation = hut.GetParentLocation();
                 if (parentLocation.IsRainingHere() || parentLocation.IsWinterHere())
                 {
@@ -163,12 +176,6 @@ public sealed class ModEntry : Mod
                                     dirt.destroyCrop(false);
                                 }
                             }
-                            if (value is Bush bush && bush.readyForHarvest())
-                            {
-                                harvester.tryToAddItemToHut(ItemRegistry.Create(bush.GetShakeOffItem()));
-                                bush.tileSheetOffset.Value = 0;
-                                bush.setUpSourceRect();
-                            }
                         }
                     }
                 }
@@ -197,7 +204,7 @@ public sealed class ModEntry : Mod
         nameof(JunimoHut_draw_Transpiler)
     );
 
-    private static void ToggleWorkPatches()
+    internal static void ToggleWorkPatches()
     {
         if (JunimoHut_updateWhenFarmNotCurrentLocation != null && JunimoHut_draw != null)
         {
@@ -501,7 +508,7 @@ public sealed class ModEntry : Mod
         location.Y += yOffset * juni.Scale * 4f;
         junimoHat.draw(b, location, 1f, 1f, juni.drawOnTop ? 0.992f : (juni.StandingPixel.Y + 3) / 10000f, direction);
 #if DEBUG
-        Utility.drawTinyDigits(frame, b, location, 4f, 1f, Color.White);
+        Utility.drawTinyDigits(frame, b, location, 2f, 1f, Color.White);
 #endif
     }
     #endregion

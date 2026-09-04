@@ -4,8 +4,13 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [0.1.0] - YYYY-MM-DD
+## [1.0.0] - 2026-09-04
+
+## Added
+- Rest of the stuff for release yay.
+
+## [0.1.0] - 2026-09-03
 
 ### Added
 
-- Working on this spiritually.
+- Initial commit.

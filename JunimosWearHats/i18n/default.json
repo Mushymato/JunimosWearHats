@@ -1,9 +1,9 @@
 {
   "$schema": "https://smapi.io/schemas/i18n.json",
   "config.Enable_WorkInRainAndWinter.name": "Enable: Work In Rain & Winter",
-  "config.Enable_WorkInRainAndWinter.desc": "When junimos have a hat to wear, they'll work in the rain and winter.",
+  "config.Enable_WorkInRainAndWinter.desc": "When the junimos have a hat to wear, they'll work in the rain and winter.",
   "config.Enable_HarvestAllAtEndOfDay.name": "Enable: Harvest All at End of Day",
-  "config.Enable_HarvestAllAtEndOfDay.desc": "All harvestable crops within the Junimo Hut's range will be harvested at end of day.",
+  "config.Enable_HarvestAllAtEndOfDay.desc": "The junimos will pull overtime and harvests all crops within the Junimo Hut's range at end of day.",
   "config.Enable_RaisinsIncreaseRadius.name": "Enable: Raisins Increase Radius",
-  "config.Enable_RaisinsIncreaseRadius.desc": "When the junimos are supplied with raisins, their harvest radius is slightly bigger (8 -> 10)."
+  "config.Enable_RaisinsIncreaseRadius.desc": "When the junimos are supplied with raisins, the harvest radius increase from 8 to 10."
 }
