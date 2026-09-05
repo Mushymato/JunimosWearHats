@@ -16,18 +16,7 @@ namespace JunimosWearHats;
 
 public sealed class ModConfig
 {
-    public bool Enable_WorkInRainAndWinter
-    {
-        get => field;
-        set
-        {
-            if (field != value)
-            {
-                field = value;
-                ModEntry.ToggleWorkPatches();
-            }
-        }
-    } = true;
+    public bool Enable_WorkInRainAndWinter { get; set; } = true;
     public bool Enable_HarvestAllAtEndOfDay { get; set; } = true;
     public bool Enable_RaisinsIncreaseRadius { get; set; } = true;
 
@@ -92,7 +81,14 @@ public sealed class ModEntry : Mod
             gmcm.AddBoolOption(
                 ModManifest,
                 () => config.Enable_WorkInRainAndWinter,
-                (value) => config.Enable_WorkInRainAndWinter = value,
+                (value) =>
+                {
+                    if (config.Enable_WorkInRainAndWinter != value)
+                    {
+                        config.Enable_WorkInRainAndWinter = value;
+                        ModEntry.ToggleWorkPatches();
+                    }
+                },
                 I18n.Config_EnableWorkInRainAndWinter_Name,
                 I18n.Config_EnableWorkInRainAndWinter_Desc
             );
