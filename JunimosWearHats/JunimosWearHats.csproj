@@ -19,7 +19,7 @@
     <Description>Junimos wear hats and work out in the rain/winter when they have hat.</Description>
     <UniqueId>mushymato.JunimosWearHats</UniqueId>
     <UpdateKeys>Nexus:51735,GitHub:Mushymato/JunimosWearHats</UpdateKeys>
-    <Version>1.0.0</Version>
+    <Version>1.0.1</Version>
     <BaseManifest>new</BaseManifest>
     <MinimumApiVersion_Behavior>Update</MinimumApiVersion_Behavior>
     <MinimumGameVersion_Behavior>UpdateFull</MinimumGameVersion_Behavior>

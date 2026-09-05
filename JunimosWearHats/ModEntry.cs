@@ -100,15 +100,15 @@ public sealed class ModEntry : Mod
                 ModManifest,
                 () => config.Enable_HarvestAllAtEndOfDay,
                 (value) => config.Enable_HarvestAllAtEndOfDay = value,
-                I18n.Config_EnableWorkInRainAndWinter_Name,
-                I18n.Config_EnableWorkInRainAndWinter_Desc
+                I18n.Config_EnableHarvestAllAtEndOfDay_Name,
+                I18n.Config_EnableHarvestAllAtEndOfDay_Desc
             );
             gmcm.AddBoolOption(
                 ModManifest,
                 () => config.Enable_RaisinsIncreaseRadius,
                 (value) => config.Enable_RaisinsIncreaseRadius = value,
-                I18n.Config_EnableWorkInRainAndWinter_Name,
-                I18n.Config_EnableWorkInRainAndWinter_Desc
+                I18n.Config_EnableRaisinsIncreaseRadius_Name,
+                I18n.Config_EnableRaisinsIncreaseRadius_Desc
             );
         }
     }
@@ -244,6 +244,8 @@ public sealed class ModEntry : Mod
     private void OnDayStarted(object? sender, DayStartedEventArgs e)
     {
         if (!Context.IsMainPlayer)
+            return;
+        if (!config.Enable_RaisinsIncreaseRadius && !config.Enable_WorkInRainAndWinter)
             return;
         Utility.ForEachBuilding<JunimoHut>(hut =>
         {
