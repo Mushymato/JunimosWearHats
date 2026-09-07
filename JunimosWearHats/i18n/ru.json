@@ -1,0 +1,9 @@
+{
+  "$schema": "https://smapi.io/schemas/i18n.json",
+  "config.Enable_WorkInRainAndWinter.name": "Работа в дождь и зимой",
+  "config.Enable_WorkInRainAndWinter.desc": "Когда у джунимо есть шляпа, они работают в дождь и зимой.",
+  "config.Enable_HarvestAllAtEndOfDay.name": "Сбор всего урожая в конце дня",
+  "config.Enable_HarvestAllAtEndOfDay.desc": "Джунимо работают сверхурочно и собирают весь урожай в пределах досягаемости домика Джунимо в конце дня.",
+  "config.Enable_RaisinsIncreaseRadius.name": "Увеличение радиуса изюмом",
+  "config.Enable_RaisinsIncreaseRadius.desc": "Когда джунимо снабжаются изюмом, радиус сбора урожая увеличивается с 8 до 10."
+}
